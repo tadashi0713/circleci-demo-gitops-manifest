@@ -1,0 +1,7 @@
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: circleci-demo-gitops-certificate
+spec:
+  domains:
+    - gitops.gke-demo.tadashi-cci.com
