@@ -3,18 +3,12 @@ kind: Ingress
 metadata:
   name: circleci-demo-gitops-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: gke-demo-gitops-ip
-    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.global-static-ip-name: gke-gitops-ip
     networking.gke.io/managed-certificates: circleci-demo-gitops-certificate
+    kubernetes.io/ingress.class: "gce"
 spec:
-  rules:
-    - host: gitops.gke-demo.tadashi-cci.com
-      http:
-        paths:
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                name: circleci-demo-gitops-app
-                port:
-                  number: 80
+  defaultBackend:
+    service:
+      name: circleci-demo-gitops-app
+      port:
+        number: 80

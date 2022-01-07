@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: circleci-demo-gitops-app
 spec:
+  type: NodePort
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 80
     targetPort: 80
   selector:
     app: circleci-demo-gitops-app
