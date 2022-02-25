@@ -14,7 +14,7 @@ spec:
         app: circleci-demo-gitops-app
     spec:
       containers:
-        - image: asia.gcr.io/circleci-tadashi/circleci-demo-gitops:ede7575
+        - image: asia.gcr.io/circleci-tadashi/circleci-demo-gitops:ff07617
           name: circleci-demo-gitops-app
           ports:
             - containerPort: 80
